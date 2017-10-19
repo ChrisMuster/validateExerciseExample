@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+	<head>
+		<title>jQuery Validation Example</title>
+		<style>
+			#mover {
+				position: absolute;
+				top: 388px;
+				left: 400px;
+				float: right;
+				width: 300px;
+				height: 200px;
+				border: solid 1px black;
+			}
+			#mover2 {
+				position: absolute;
+				top: 594px;
+				left: 200px;
+				float: right;
+				width: 300px;
+				height: 200px;
+				border: solid 1px green;
+			}
+			.submit {
+				width: 173px;
+			}
+		</style>
+	</head>
+	<body>
+		<form id="validate_me" method="post" action="submit.html">
+			<table>
+				<tr>
+					<td>Name</td>
+					<td>:</td>
+					<td><input type="text" id="name" name="custom1" placeholder="First and last name"></td>
+				</tr>
+				<tr>
+					<td>Age</td>
+					<td>:</td>
+					<td><input type="number" id="age" name="custom2" placeholder="You need to be 18+"></td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td>:</td>
+					<td><input type="email" id="email" name="email" placeholder="Please enter valid email"></td>
+				</tr>
+				<tr>
+					<td>Phone Number</td>
+					<td>:</td>
+					<td><input type="text" id="phone" name="phone" placeholder="Please enter valid phone no."></td>
+				</tr>
+				<tr>
+					<td>Credit Card</td>
+					<td>:</td>
+					<td><input type="text" id="card" name="card" placeholder="1234-5678-9012-3456"></td>
+				</tr>
+				<tr>
+					<td>Enter a multiple of 3</td>
+					<td>:</td>
+					<td><input type="text" id="divide" name="divide" placeholder="A multiple of 3"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td><input type="submit" class="submit" value="Submit"/></td>
+				</tr>
+			</table>
+		</form>
+		<form id="validate_me2" method="post" action="submit.html">
+			<table>
+				<tr>
+					<td>Name</td>
+					<td>:</td>
+					<td><input type="text" id="name" name="name" placeholder="First and last name"></td>
+				</tr>
+				<tr>
+					<td>Age</td>
+					<td>:</td>
+					<td><input type="number" id="age" name="age" placeholder="You need to be 18+"></td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td>:</td>
+					<td><input type="email" id="email" name="email" placeholder="Please enter valid email"></td>
+				</tr>
+				<tr>
+					<td>Phone Number</td>
+					<td>:</td>
+					<td><input type="text" id="phone" name="phone" placeholder="Please enter valid phone no."></td>
+				</tr>
+				<tr>
+					<td>Credit Card</td>
+					<td>:</td>
+					<td><input type="text" id="card" name="card" placeholder="1234-5678-9012-3456"></td>
+				</tr>
+				<tr>
+					<td>Enter a multiple of 3</td>
+					<td>:</td>
+					<td><input type="text" id="divide" name="divide" placeholder="A multiple of 3"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td><input class="submit" type="submit" value="Submit"/></td>
+				</tr>
+			</table>
+		</form>
+		<div id="mover"></div>
+		<div id="mover2"></div>
+		<div id="container"></div>
+		<script src="jquery-3.1.1.min.js"></script>
+		<script src="validate.js"></script>
+		<script src="validate_ext.js"></script>
+		<script>
+
+		$('#validate_me').validate({
+			name: {
+				required : true,
+				length : 15
+			},
+			age : {
+				required : true,
+				length : 3, 
+				min : 18,
+				max : 140,
+				number : true
+			},
+			email : {
+				required : true,
+				email : true
+			},
+			phone : {
+				phone : true
+			},
+			card : {
+				credit_card : true
+			},
+			divide : {
+				required : true,
+				divisible : 3
+			}
+		}, {
+			required:'put something in it.'
+		});
+
+		$('#validate_me2').validate({
+			name: {
+				required : true,
+				length : 15
+			},
+			age : {
+				required : true,
+				length : 3, 
+				min : 18,
+				max : 140,
+				number : true
+			},
+			email : {
+				required : true,
+				email : true
+			},
+			phone : {
+				phone : true
+			},
+			card : {
+				credit_card : true
+			},
+			divide : {
+				required : true,
+				divisible : 3
+			}
+		});
+		</script>
+	</body>
+</html>
