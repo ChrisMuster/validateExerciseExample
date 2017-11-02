@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jQuery Validation</title>
+	<link rel="stylesheet" type="text/css" href="styles/validation.css">
+</head>
+<body>
+	<form id="validate_me" method="post" action="submit.html">
+		<table>
+			<tr>
+				<td>Name</td>
+				<td><strong> : </strong></td>
+				<td><input type="text" id="name" name="name" placeholder="First and last name."></td>
+			</tr>
+			<tr>
+				<td>Age (in years)</td>
+				<td><strong> : </strong></td>
+				<td><input type="number" id="age" name="age" placeholder="Must be 18 or over."></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><strong> : </strong></td>
+				<td><input type="text" id="email" name="email" placeholder="Please enter valid email."></td>
+			</tr>
+			<tr>
+				<td>Phone Number</td>
+				<td><strong> : </strong></td>
+				<td><input type="text" id="phone" name="phone" placeholder="Please enter valid UK no."></td>
+			</tr>
+			<tr>
+				<td>Credit Card</td>
+				<td><strong> : </strong></td>
+				<td><input type="text" id="card" name="card" placeholder="Please enter valid card no."></td>
+			</tr>
+			<tr>
+				<td>Divisible By 3</td>
+				<td><strong> : </strong></td>
+				<td><input type="text" id="divisible_by_3" name="divisible_by_3" placeholder="Please enter a multiple of 3"></td>
+			</tr>
+		</table>
+		<input type="submit" id="submit" name="submit" value="Submit">
+	</form>
+
+	<div id="separate">
+		<form id="validate_me_box" method="post" action="submit.html">
+			<table>
+				<tr>
+					<td>Name</td>
+					<td><strong> : </strong></td>
+					<td><input type="text" id="name" name="name" placeholder="First and last name."></td>
+				</tr>
+				<tr>
+					<td>Age (in years)</td>
+					<td><strong> : </strong></td>
+					<td><input type="number" id="age" name="age" placeholder="Must be 18 or over."></td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td><strong> : </strong></td>
+					<td><input type="text" id="email" name="email" placeholder="Please enter valid email."></td>
+				</tr>
+				<tr>
+					<td>Phone Number</td>
+					<td><strong> : </strong></td>
+					<td><input type="text" id="phone" name="phone" placeholder="Please enter valid UK no."></td>
+				</tr>
+				<tr>
+					<td>Credit Card</td>
+					<td><strong> : </strong></td>
+					<td><input type="text" id="card" name="card" placeholder="Please enter valid card no."></td>
+				</tr>
+				<tr>
+					<td>Divisible By 3</td>
+					<td><strong> : </strong></td>
+					<td><input type="text" id="divisible_by_3" name="divisible_by_3" placeholder="Please enter a multiple of 3"></td>
+				</tr>
+			</table>
+			<input type="submit" id="submit" name="submit" value="Submit">
+		</form>
+
+		<div id="error_box"></div>
+
+	</div>
+
+	<script src="scripts/jquery-3.2.1.min.js"></script>
+	<script src="scripts/jquery-ui.min.js"></script>
+	<script src="scripts/validate-plugin.js"></script>
+	<script src="scripts/validation.js"></script>
+	
+</body>
+</html>
